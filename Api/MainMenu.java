@@ -156,11 +156,12 @@ public class MainMenu {
                         if(CustomerService.customers.keySet().contains(customerEmailAddress)){
                             throw new IllegalArgumentException("The email addrres already existed.");
                         }
+                        HotelResource.createACustomer(customerEmailAddress, customerFirstName, customerLastName);
                     }catch (Exception e){
                         System.out.println("Something went wrong.");
                         continue;
                     }
-                    HotelResource.createACustomer(customerEmailAddress, customerFirstName, customerLastName);
+                    
                     continue;
                 case 4:
                     MainMenu.AdminMenu();
